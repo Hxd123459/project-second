@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mapper" />
+        <module name="project-second-zuul-4081" />
+        <module name="api" />
+        <module name="provider-8081" />
+        <module name="model" />
+        <module name="eureka-7083" />
+        <module name="project-second-config" />
+        <module name="system-consumer-6081" />
+        <module name="service" />
+        <module name="eureka-7082" />
+        <module name="eureka-7081" />
+        <module name="project-second-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project-second-consumer" target="1.5" />
+      <module name="project-second-eureka" target="1.5" />
+      <module name="project-second-provider" target="1.5" />
+      <module name="provider-8081 (1)" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

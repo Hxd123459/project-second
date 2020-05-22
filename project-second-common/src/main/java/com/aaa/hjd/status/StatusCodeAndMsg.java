@@ -23,6 +23,7 @@ public enum StatusCodeAndMsg {
     DEL_DATA_FAILED("10007","删除失败"),
     UPDATE_DATA_SUCCESS("20005","更新成功"),
     UPDATE_DATA_FAILED("10008","更新失败"),
+<<<<<<< HEAD
 
     SELECT_ROLE_SUCCESS("210001","查询角色成功"),
     SELECT_ROLE_FAILED("210002","暂无角色信息"),
@@ -32,6 +33,13 @@ public enum StatusCodeAndMsg {
     DELETE_ROLE_FAILED("210006","删除角色失败"),
 
     SYSTEM_ERROR("10009","系统内部异常");
+=======
+    GET_DAT_SUCCESS("20007","查询成功"),
+    GET_DAT_FAILED("10011","暂无数据"),
+    SYSTEM_ERROR("10009","系统内部异常"),
+    GET_MENU_SUCCESS("20006","菜单信息获取成功"),
+    GET_MENU_FAILED("10010","暂无菜单信息");
+>>>>>>> 添加菜单管理
     private String code;
     private String msg;
     StatusCodeAndMsg(String code, String msg){

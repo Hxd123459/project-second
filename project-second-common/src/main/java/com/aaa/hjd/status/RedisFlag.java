@@ -18,7 +18,11 @@ public class RedisFlag {
     public static final String RESULT_REDIS="OK";
     public static final String CHANGE_LINE="1";
     /**
-     * 存放企业单位信息
+     * 存放企业单位信息的key
      */
     public static final String UNIT_INFO="units";
+    /**
+     * 存放菜单信息的key
+     */
+    public static final String MENU_INFO="menus";
 }

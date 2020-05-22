@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  *  登陆 的控制层
  */
 @RestController
-@Api(value = "登陆信息",tags = "用户登录接口")
+@Api(value = "登陆模块",tags = "用户登录接口")
 public class LoginController extends BaseController {
     @Autowired
     private PubService pubService;

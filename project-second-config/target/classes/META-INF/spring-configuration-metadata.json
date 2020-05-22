@@ -1,0 +1,62 @@
+{
+  "groups": [
+    {
+      "name": "spring.ftp",
+      "type": "com.aaa.hjd.properties.FtpClientConfigProperties",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.redis",
+      "type": "com.aaa.hjd.properties.RedisConfigProperties",
+      "sourceType": "com.aaa.hjd.properties.RedisConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.ftp.base-path",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.ftp.host",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.ftp.http-path",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.ftp.password",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.ftp.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.ftp.username",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.FtpClientConfigProperties"
+    },
+    {
+      "name": "spring.redis.command-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.aaa.hjd.properties.RedisConfigProperties"
+    },
+    {
+      "name": "spring.redis.max-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.aaa.hjd.properties.RedisConfigProperties"
+    },
+    {
+      "name": "spring.redis.nodes",
+      "type": "java.lang.String",
+      "sourceType": "com.aaa.hjd.properties.RedisConfigProperties"
+    }
+  ],
+  "hints": []
+}

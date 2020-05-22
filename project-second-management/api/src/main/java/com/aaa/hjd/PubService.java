@@ -1,15 +1,16 @@
 package com.aaa.hjd;
 
 import com.aaa.hjd.base.ResultData;
-import com.aaa.hjd.model.Role;
-import com.aaa.hjd.model.RoleMenu;
+
+
+import com.aaa.hjd.model.TMenu;
+
 import com.aaa.hjd.model.TUser;
 import com.aaa.hjd.vo.TokenVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -55,5 +56,47 @@ public interface PubService {
     @RequestMapping("/turnLogin")
     TokenVo turnLogin();
 
+    /**
+     * 查询菜单信息
+     * @return
+     */
+    @ResponseBody
+    @GetMapping("/getAllMenus")
+    ResultData getAllMenus();
 
+    /**
+     * 新增菜单或者是按钮
+     * @param tMenu
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/addMenuOrButton")
+     ResultData addMenuOrButton(@RequestBody TMenu tMenu);
+
+    /**
+     * 删除菜单或者是按钮根据id
+     * @param ids 目标id
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/delMenuOrButton")
+    ResultData delMenuOrButton(@RequestBody List<Object> ids);
+
+    /**
+     * 更新菜单或者是按钮
+     * @param tMenu
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/updateMenuOrButton")
+    ResultData updateMenuOrButton(@RequestBody TMenu tMenu);
+
+    /**
+     * 通过id查询一条菜单或者是按钮信息
+     * @param tMenu
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/selectMenuOrButtonById")
+    ResultData selectMenuOrButtonById(@RequestBody TMenu tMenu);
 }

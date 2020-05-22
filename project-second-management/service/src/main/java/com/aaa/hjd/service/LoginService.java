@@ -1,6 +1,5 @@
 package com.aaa.hjd.service;
 
-import com.aaa.hjd.base.BaseService;
 import com.aaa.hjd.mapper.TUserMapper;
 import com.aaa.hjd.model.TUser;
 import com.aaa.hjd.utils.IdUtils;
@@ -47,7 +46,9 @@ public class LoginService {
                     //因为xx只有redis中存在该 key 的时候，才会执行成功
                     //所以去redis设置一下响应的key，因为这是登陆操作，就算是
                     //redis中有旧值，直接被覆盖即可
-                    if (RESULT_REDIS.equals(redisService.set(keyOfRedis,uuid))) {
+                    String set = redisService.set(keyOfRedis, uuid);
+                    System.out.println(set);
+                    if (RESULT_REDIS.equals(set)) {
                         //说明已经设置好值，然后执行 xx
                         String resultOfRedis = redisService.set(keyOfRedis, uuid, XX, EX, 1800);
                         System.out.println("resultOfRedis="+resultOfRedis);
