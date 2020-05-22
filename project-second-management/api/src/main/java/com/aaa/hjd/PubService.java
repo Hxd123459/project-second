@@ -6,6 +6,8 @@ import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.model.TMenu;
 
 import com.aaa.hjd.model.TUser;
+import com.aaa.hjd.vo.RoleMenuSelecter;
+import com.aaa.hjd.vo.RoleSelecter;
 import com.aaa.hjd.vo.TokenVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
