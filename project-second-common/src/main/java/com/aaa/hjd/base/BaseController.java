@@ -470,5 +470,74 @@ public class BaseController {
         return resultData;
     }
 
+    /**
+     * 角色查询成功
+     * @param obj
+     * @return
+     */
+    protected ResultData selectRoleSuccess(Object obj){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SELECT_ROLE_SUCCESS.getCode());
+        resultData.setMsg(SELECT_ROLE_SUCCESS.getMsg());
+        resultData.setData(obj);
+        return resultData;
+    }
+
+    /**
+     * 角色查询失败
+     * @return
+     */
+    protected ResultData selectRoleError(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SELECT_ROLE_FAILED.getCode());
+        resultData.setMsg(SELECT_ROLE_FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 删除角色失败
+     * @return
+     */
+    protected ResultData deleteRoleError(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(DELETE_ROLE_FAILED.getCode());
+        resultData.setMsg(DELETE_ROLE_FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 删除角色成功
+     * @return
+     */
+    protected ResultData deleteRoleSuccess(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(DELETE_ROLE_SUCCESS.getCode());
+        resultData.setMsg(DELETE_ROLE_SUCCESS.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 新增角色成功
+     * @return
+     */
+    protected ResultData insertRoleSuccess(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(INSERT_ROLE_SUCCESS.getCode());
+        resultData.setMsg(INSERT_ROLE_SUCCESS.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 新增角色失败
+     * @return
+     */
+    protected ResultData insertRoleFailed(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(INSERT_ROLE_FAILED.getCode());
+        resultData.setMsg(INSERT_ROLE_FAILED.getMsg());
+        return resultData;
+    }
+
+
 
 }

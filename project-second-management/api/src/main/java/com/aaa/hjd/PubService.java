@@ -1,10 +1,15 @@
 package com.aaa.hjd;
 
 import com.aaa.hjd.base.ResultData;
+import com.aaa.hjd.model.Role;
+import com.aaa.hjd.model.RoleMenu;
 import com.aaa.hjd.model.TUser;
 import com.aaa.hjd.vo.TokenVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -49,4 +54,6 @@ public interface PubService {
      */
     @RequestMapping("/turnLogin")
     TokenVo turnLogin();
+
+
 }

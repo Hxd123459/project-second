@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.hjd.mapper.RoleMenuMapper">
+  <resultMap id="BaseResultMap" type="com.aaa.hjd.model.RoleMenu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ROLE_ID" jdbcType="BIGINT" property="roleId" />
+    <result column="MENU_ID" jdbcType="BIGINT" property="menuId" />
+    
+  </resultMap>
+  
+  <delete id="deleteRoleMenuByRoleId" parameterType="com.aaa.hjd.model.RoleMenu">
+        DELETE FROM t_role_menu WHERE ROLE_ID = #{roleId}
+  </delete>
+
+    <delete id="batchDeleteRoleMenuByRoleId" parameterType="java.util.List">
+        DELETE FROM t_role_menu WHERE ROLE_ID IN (
+        <foreach collection="list" item="rolemenu" separator=",">
+            #{rolemenu.roleId}
+        </foreach>
+         )
+    </delete>
+  
+  <insert id="batchInsertRoleMenu" parameterType="java.util.List">
+        INSERT INTO t_role_menu (ROLE_ID,MENU_ID) VALUES
+        <foreach collection="list" item="rolemenu" separator=",">
+          (#{rolemenu.roleId},#{rolemenu.menuId})
+        </foreach>
+  </insert>
+
+
+</mapper>

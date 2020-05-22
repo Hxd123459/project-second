@@ -228,7 +228,7 @@ public abstract class BaseService<T> {
      * @return
      */
     private Class<T> getTypeArgument(){
-        if (null!=cache) {
+        if (null==cache) {
             cache=(Class<T>)((ParameterizedType)(this.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
         }
         return cache;

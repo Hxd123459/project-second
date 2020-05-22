@@ -3,6 +3,7 @@ package com.aaa.hjd.service;
 import com.aaa.hjd.utils.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.JedisCluster;
 
 import static com.aaa.hjd.status.RedisFlag.*;
