@@ -471,7 +471,6 @@ public class BaseController {
     }
 
     /**
-<<<<<<< HEAD
      * 角色查询成功
      * @param obj
      * @return
@@ -541,14 +540,14 @@ public class BaseController {
 
 
 
-=======
+    /**
      * 查询数据成功
      * @return
      */
    protected ResultData selectSuccess(Object data){
        ResultData resultData = new ResultData();
-       resultData.setCode(GET_DAT_SUCCESS.getCode());
-       resultData.setMsg(GET_DAT_SUCCESS.getMsg());
+       resultData.setCode(GET_DATA_SUCCESS.getCode());
+       resultData.setMsg(GET_DATA_SUCCESS.getMsg());
        resultData.setData(data);
        return resultData;
    }
@@ -558,9 +557,8 @@ public class BaseController {
      */
     protected ResultData selectFailed(){
         ResultData resultData = new ResultData();
-        resultData.setCode(GET_DAT_FAILED.getCode());
-        resultData.setMsg(GET_DAT_FAILED.getMsg());
+        resultData.setCode(GET_DATA_FAILED.getCode());
+        resultData.setMsg(GET_DATA_FAILED.getMsg());
         return resultData;
     }
->>>>>>> 添加菜单管理
 }

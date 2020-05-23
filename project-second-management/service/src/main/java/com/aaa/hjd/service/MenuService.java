@@ -29,8 +29,8 @@ import static com.aaa.hjd.status.StatusCodeAndMsg.*;
  *  List<TMenu> menus = tMenuMapper.select(tMenu);
  *         for (TMenu menu:
  *                 menus) {
- *             TMenu menu1 = new TMenu();
- *             menu1.setParentId(menu.getMenuId());
+ *
+ *             tMenu.setParentId(menu.getMenuId());
  *             menu.setSubmenu(selectAllMenus(menu1));
  *         }
  *         if (menus.size()==0){
@@ -47,55 +47,22 @@ public class MenuService extends BaseService<TMenu> {
      * 获取菜单信息
      * @return
      */
-    public List<TMenu> selectAllMenus(){
-        //菜单树
-        List<TMenu> menusList=new ArrayList<TMenu>();
-        //菜单的全部信息
-        List<TMenu> allMenusList=tMenuMapper.selectAll();
-        if (null!=allMenusList&&allMenusList.size()>0) {
-            //拿到一级菜单信息
-            for (int i = 0; i <allMenusList.size() ; i++) {
-                TMenu menu = allMenusList.get(i);
-                if (menu.getParentId()==0) {
-                    //说明是一级菜单
-                    menusList.add(menu);
-                }
-            }
-            //为一级菜单设置子菜单
-            for (TMenu menu: menusList) {
-               menu.setSubmenu(getSubMenu(menu.getId(),allMenusList));
+    public List<TMenu> selectAllMenus(TMenu tMenu){
+        List<TMenu> menus = tMenuMapper.selectMenuByParenId(tMenu);
+        //递归结束的条件-就是子菜单下面再无子菜单
+        if (menus.size()>0&&null!=menus) {
+            for (TMenu menu:menus) {
+                //将上级菜单的id，作为parentId在此进行查询
+                tMenu.setParentId(menu.getId());
+                //递归调用，查询出上级菜单的子菜单
+                List<TMenu> subMenu = selectAllMenus(tMenu);
+                //将和上级菜单对应的子菜单放到上级菜单的subMenus属性中
+                menu.setSubmenu(subMenu);
             }
         }
-
-        return menusList;
+        return menus;
     }
 
-    /**
-     * 获取上一级菜单的子菜单
-     * @param menuId 上一级菜单的id
-     * @param allMenus 所有的菜单信息（包含一级，二级，三级）
-     * @return
-     */
-    private List<TMenu> getSubMenu(Long menuId,List<TMenu> allMenus){
-        //子菜单
-        List<TMenu> subMenus=new ArrayList<TMenu>();
-        for (TMenu menu:
-             allMenus) {
-            if (menu.getParentId().equals(menuId)){
-                subMenus.add(menu);
-            }
-        }
-        //子菜单的下一级
-        //疑问：当递归进入，查找子菜单的子菜单，那么子菜单的数据现在在哪，是在下面循环代码中的subMenus中
-        for (TMenu menu:
-             subMenus) {
-             menu.setSubmenu(getSubMenu(menu.getId(),allMenus));
-        }
-        if (subMenus.size()==0){
-            return null;
-        }
-        return subMenus;
-    }
 
     /**
      * 添加菜单/按钮

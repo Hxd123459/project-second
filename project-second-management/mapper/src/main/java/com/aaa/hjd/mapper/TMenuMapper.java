@@ -21,4 +21,11 @@ public interface TMenuMapper extends Mapper<TMenu> {
      */
      Integer batchDelMenuOrButton(List<Object> ids);
 
+    /**
+     * 根据parentId来查询菜单或者按钮信息
+     * @param tMenu
+     * @return
+     */
+     List<TMenu> selectMenuByParenId(TMenu tMenu);
+
 }

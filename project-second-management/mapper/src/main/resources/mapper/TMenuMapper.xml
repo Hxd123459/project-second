@@ -22,4 +22,11 @@
              #{item}
         </foreach>
     </delete>
+
+    <select id="selectMenuByParenId" parameterType="com.aaa.hjd.model.TMenu" resultType="com.aaa.hjd.model.TMenu">
+        select tm.MENU_ID id,tm.PARENT_ID,tm.MENU_NAME,tm.PATH
+        ,tm.COMPONENT,tm.PERMS,tm.ICON,td.VALUEE TYPE,tm.ORDER_NUM,tm.CREATE_TIME
+        ,tm.MODIFY_TIME from t_menu tm LEFT JOIN t_dict td
+        on tm.TYPE=td.KEYY where td.TABLE_NAME='t_menu' and tm.PARENT_ID=#{parentId}
+    </select>
 </mapper>

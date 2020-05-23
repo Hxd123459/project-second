@@ -60,11 +60,12 @@ public interface PubService {
 
     /**
      * 查询菜单信息
+     * @param tMenu
      * @return
      */
     @ResponseBody
-    @GetMapping("/getAllMenus")
-    ResultData getAllMenus();
+    @PostMapping("/getAllMenus")
+    ResultData getAllMenus(@RequestBody TMenu tMenu);
 
     /**
      * 新增菜单或者是按钮
@@ -101,4 +102,5 @@ public interface PubService {
     @ResponseBody
     @PostMapping("/selectMenuOrButtonById")
     ResultData selectMenuOrButtonById(@RequestBody TMenu tMenu);
+
 }

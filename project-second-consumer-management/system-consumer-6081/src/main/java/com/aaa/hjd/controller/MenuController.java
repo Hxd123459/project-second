@@ -28,10 +28,10 @@ public class MenuController {
     private PubService pubService;
 
     @ResponseBody
-    @GetMapping("/getAllMenus")
+    @PostMapping("/getAllMenus")
     @ApiOperation(value = "获取所有父/子菜单",notes = "获取菜单信息")
-    public ResultData getAllMenus(){
-       return pubService.getAllMenus();
+    public ResultData getAllMenus(@RequestBody TMenu tMenu){
+       return pubService.getAllMenus(tMenu);
     }
 
     @ResponseBody
@@ -57,7 +57,7 @@ public class MenuController {
 
     @ResponseBody
     @PostMapping("/selectMenuOrButtonById")
-    @ApiOperation(value = "根基menuId查询菜单/按钮信息",notes = "填写新的菜单/按钮的menuId")
+    @ApiOperation(value = "根据menuId查询菜单/按钮信息",notes = "填写新的菜单/按钮的menuId")
     public ResultData selectMenuOrButtonById(@RequestBody TMenu tMenu){
         return pubService.selectMenuOrButtonById(tMenu);
     }

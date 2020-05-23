@@ -33,10 +33,10 @@ public class MenuController extends BaseController {
     @Autowired
     private MenuService menuService;
     @ResponseBody
-    @GetMapping("/getAllMenus")
-    public ResultData getAllMenus(){
+    @PostMapping("/getAllMenus")
+    public ResultData getAllMenus(@RequestBody TMenu tMenu){
         ResultData resultData = new ResultData();
-        List<TMenu> menus = menuService.selectAllMenus();
+        List<TMenu> menus = menuService.selectAllMenus(tMenu);
         if (null!=menus && menus.size()>0) {
             //说明查询到数据了
             resultData.setMsg(GET_MENU_SUCCESS.getMsg());
@@ -106,4 +106,5 @@ public class MenuController extends BaseController {
             return selectFailed();
         }
     }
+
 }
