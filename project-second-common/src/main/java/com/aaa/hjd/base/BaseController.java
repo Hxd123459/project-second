@@ -538,6 +538,58 @@ public class BaseController {
         return resultData;
     }
 
+    /**
+     * 查询数据成功，返回data数据
+     * @param data
+     * @return
+     */
+    protected ResultData selectSuccessZ(Object data) {
+        ResultData resultDate = new ResultData();
+        resultDate.setCode(SELECT_SUCCESS.getCode());
+        resultDate.setMsg(SELECT_SUCCESS.getMsg());
+        resultDate.setData(data);
+        return resultDate;
+    }
+
+    /**
+     * 查询数据成功，返回data数据和详情信息
+     * @param detail
+     * @param data
+     * @return
+     */
+    protected ResultData selectSuccessZ(String detail, Object data) {
+        ResultData resultDate = new ResultData();
+        resultDate.setCode(SELECT_SUCCESS.getCode());
+        resultDate.setMsg(SELECT_SUCCESS.getMsg());
+        resultDate.setDetail(detail);
+        resultDate.setData(data);
+        return resultDate;
+    }
+
+    /**
+     * 查询失败
+     * @return
+     */
+    protected ResultData selectFailedZ() {
+        ResultData resultDate = new ResultData();
+        resultDate.setCode(SELECT_FAILED.getCode());
+        resultDate.setMsg(SELECT_FAILED.getMsg());
+        return resultDate;
+    }
+
+    /**
+     * 查询失败，返回自定义详情
+     * @param detail
+     * @return
+     */
+    protected ResultData selectFailedZ(String detail) {
+        ResultData resultDate = new ResultData();
+        resultDate.setCode(SELECT_FAILED.getCode());
+        resultDate.setMsg(SELECT_FAILED.getMsg());
+        resultDate.setDetail(detail);
+        return resultDate;
+    }
+
 
 
     /**

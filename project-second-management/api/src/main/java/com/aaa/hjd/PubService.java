@@ -1,18 +1,18 @@
 package com.aaa.hjd;
 
 import com.aaa.hjd.base.ResultData;
-
-
+import com.aaa.hjd.model.Role;
+import com.aaa.hjd.model.RoleMenu;
 import com.aaa.hjd.model.TMenu;
-
 import com.aaa.hjd.model.TUser;
-import com.aaa.hjd.vo.RoleMenuSelecter;
-import com.aaa.hjd.vo.RoleSelecter;
 import com.aaa.hjd.vo.TokenVo;
+import com.aaa.hjd.vo.UpdateUserVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -74,7 +74,7 @@ public interface PubService {
      */
     @ResponseBody
     @PostMapping("/addMenuOrButton")
-     ResultData addMenuOrButton(@RequestBody TMenu tMenu);
+    ResultData addMenuOrButton(@RequestBody TMenu tMenu);
 
     /**
      * 删除菜单或者是按钮根据id
@@ -102,5 +102,114 @@ public interface PubService {
     @ResponseBody
     @PostMapping("/selectMenuOrButtonById")
     ResultData selectMenuOrButtonById(@RequestBody TMenu tMenu);
+
+
+    /**
+     * @date:  2020/5/22
+     * @author: 秀仔
+     * @Description
+     * 查询所有用户信息带分页
+     * @param []
+     * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
+     * @throws
+     */
+    @PostMapping("/getUserAll")
+    public ResultData getUserAll(@RequestBody HashMap<String, Integer> map);
+
+    /**
+     * @date:  2020/5/22
+     * @author: 秀仔
+     * @Description
+     * 查询所有角色
+     * @param []
+     * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
+     * @throws
+     */
+    @GetMapping("/getRoleAll")
+    public ResultData getRoleAll();
+
+    /**
+     * @date:  2020/5/22
+     * @author: 秀仔
+     * @Description
+     * 根据id获取用户的所有角色
+     * @param [id]
+     * @return java.util.List<java.lang.Long>
+     * @throws
+     */
+    @GetMapping("/getUserRoleByID")
+    public ResultData getUserRoleByID(@RequestParam("id") Long id);
+
+    /**
+     * @date:  2020/5/22
+     * @author: 秀仔
+     * @Description
+     * 根据ids删除所有用户
+     * @param []
+     * @return java.lang.Integer
+     * @throws
+     */
+    @DeleteMapping("/deleteUserByIDs")
+    public ResultData deleteUserByIDs (@RequestBody List<Object> ids);
+
+    /**
+     * @date:  2020/5/22
+     * @author: 秀仔
+     * @Description
+     * 根据用户id修改用户信息
+     * @param []
+     * @return java.lang.Integer
+     * @throws
+     */
+    @PostMapping("/updataUserByID")
+    public ResultData updataUserByID (@RequestBody UpdateUserVo updataUserVo);
+
+    /**
+     * @date:  2020/5/23
+     * @author: 秀仔
+     * @Description
+     * 新增用户
+     * @param [map]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PutMapping("/addUser")
+    public ResultData addUser(@RequestBody UpdateUserVo updataUserVo);
+
+    /**
+     * @date:  2020/5/23
+     * @author: 秀仔
+     * @Description
+     * 获取部门层级列表
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @GetMapping("/getDeptName")
+    public ResultData getDeptName();
+
+    /**
+     * @date:  2020/5/25
+     * @author: 秀仔
+     * @Description
+     * 获取用户字典表状态值
+     * @param []
+     * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
+     * @throws
+     */
+    @GetMapping("getUserStatus")
+    public ResultData getUserStatus();
+
+    /**
+     * @date:  2020/5/25
+     * @author: 秀仔
+     * @Description
+     * 获取用户字典表性别
+     * @param []
+     * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
+     * @throws
+     */
+    @GetMapping("getUserSsex")
+    public ResultData getUserSsex();
 
 }
