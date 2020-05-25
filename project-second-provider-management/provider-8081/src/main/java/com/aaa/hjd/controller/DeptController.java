@@ -39,7 +39,6 @@ public class DeptController extends CommonController<Dept> {
      * @throws
      **/
     @PostMapping("/insertDept")
-    @Transactional(rollbackFor = Exception.class)
     public ResultData insertDept(@RequestBody Dept dept) {
         dept.setCreateTime(DateTimeUtils.getNow());
         try {
@@ -62,7 +61,6 @@ public class DeptController extends CommonController<Dept> {
      * @throws
      **/
     @PutMapping("/updateDept")
-    @Transactional(rollbackFor = Exception.class)
     public ResultData updateDept(@RequestBody Dept dept) {
         dept.setModifyTime(DateTimeUtils.getNow());
         try {
@@ -85,7 +83,6 @@ public class DeptController extends CommonController<Dept> {
      * @throws
      **/
     @DeleteMapping("/deleteDept")
-    @Transactional(rollbackFor = Exception.class)
     public ResultData deleteDept(@RequestBody Dept dept) {
         try {
             Integer result = deptService.deleteByPrimaryKey(dept);
@@ -109,7 +106,6 @@ public class DeptController extends CommonController<Dept> {
      **/
 
     @DeleteMapping("/deleteDeptList")
-    @Transactional(rollbackFor = Exception.class)
     public ResultData deleteList(@RequestBody List<Dept> ids){
         try {
             boolean b = deptService.deleteList(ids);
@@ -148,7 +144,6 @@ public class DeptController extends CommonController<Dept> {
      * @throws
      **/
     @GetMapping("/selectDeptOne")
-    @Transactional(rollbackFor = Exception.class)
     public ResultData selectOne(@RequestParam("deptId") Long deptId) {
         Dept dept = new Dept();
         dept.setDeptId(deptId);
