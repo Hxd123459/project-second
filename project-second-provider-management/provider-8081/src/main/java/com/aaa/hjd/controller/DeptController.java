@@ -108,7 +108,7 @@ public class DeptController extends CommonController<Dept> {
      * @throws
      **/
 
-    @DeleteMapping("/deleteList")
+    @DeleteMapping("/deleteDeptList")
     @Transactional(rollbackFor = Exception.class)
     public ResultData deleteList(@RequestBody List<Dept> ids){
         try {
@@ -130,7 +130,7 @@ public class DeptController extends CommonController<Dept> {
      * @return com.aaa.hjd.base.ResultData
      * @throws
      **/
-    @PostMapping("/selectForFields")
+    @PostMapping("/selectDeptForFields")
     public ResultData selectForFields(@RequestBody DeptVo deptVo){
         List<Dept> deptList = deptService.selectForFields(deptVo);
         if (deptList.size() > 0) {
@@ -147,7 +147,7 @@ public class DeptController extends CommonController<Dept> {
      * @return com.aaa.hjd.base.ResultData
      * @throws
      **/
-    @GetMapping("/selectOne")
+    @GetMapping("/selectDeptOne")
     @Transactional(rollbackFor = Exception.class)
     public ResultData selectOne(@RequestParam("deptId") Long deptId) {
         Dept dept = new Dept();

@@ -56,7 +56,7 @@ public interface IDeptService {
      * @return com.aaa.hjd.base.ResultData
      * @throws
      **/
-    @DeleteMapping("/deleteList")
+    @DeleteMapping("/deleteDeptList")
     ResultData deleteList(@RequestBody List<Dept> ids);
 
     /**
@@ -67,7 +67,7 @@ public interface IDeptService {
      * @return com.aaa.hjd.base.ResultData
      * @throws
      **/
-    @GetMapping("/selectOne")
+    @GetMapping("/selectDeptOne")
     ResultData selectOne(@RequestParam("deptId") Long deptId);
 
 
@@ -75,6 +75,6 @@ public interface IDeptService {
      * @param deptVo 搜索+查询
      * @return
      */
-    @PostMapping("/selectForFields")
+    @PostMapping("/selectDeptForFields")
     ResultData selectForFields(@RequestBody DeptVo deptVo);
 }

@@ -4,6 +4,7 @@ import com.aaa.hjd.IDeptService;
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.model.Dept;
 import com.aaa.hjd.vo.DeptVo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Description:
  */
 @RestController
+@Api(value = "部门管理模块",tags = "部门管理接口")
 public class DeptController {
 
     @Autowired
@@ -39,20 +41,20 @@ public class DeptController {
         return pubService.deleteDept(dept);
     }
 
-    @DeleteMapping("/deleteList")
+    @DeleteMapping("/deleteDeptList")
     @ApiOperation(value = "批量删除部门信息",notes = "批量删除部门信息")
     public ResultData deleteList(@RequestBody List<Dept> ids) {
         return pubService.deleteList(ids);
     }
 
-    @GetMapping("/selectOne")
+    @GetMapping("/selectDeptOne")
     @ApiOperation(value = "根据id查询部门信息",notes = "根据id查询部门信息")
     public ResultData selectOne(@RequestParam("deptId") Long deptId){
         return pubService.selectOne(deptId);
     }
 
 
-    @PostMapping("/selectForFields")
+    @PostMapping("/selectDeptForFields")
     @ApiOperation(value = "查询+搜索",notes = "查询+搜索")
     public ResultData selectForFields(@RequestBody DeptVo deptVo){
         return pubService.selectForFields(deptVo);
