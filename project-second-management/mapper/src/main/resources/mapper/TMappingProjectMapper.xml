@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.hjd.mapper.dao.TMappingProjectDao">
+
+    <resultMap type="com.aaa.hjd.mapper.entity.TMappingProject" id="TMappingProjectMap">
+        <result property="id" column="id" jdbcType="OTHER"/>
+        <result property="projectType" column="project_type" jdbcType="VARCHAR"/>
+        <result property="projectName" column="project_name" jdbcType="VARCHAR"/>
+        <result property="projectAmount" column="project_amount" jdbcType="OTHER"/>
+        <result property="projectLeader" column="project_leader" jdbcType="VARCHAR"/>
+        <result property="startDate" column="start_date" jdbcType="OTHER"/>
+        <result property="endDate" column="end_date" jdbcType="OTHER"/>
+        <result property="completeTime" column="complete_time" jdbcType="VARCHAR"/>
+        <result property="acceptanceDepartment" column="acceptance_department" jdbcType="VARCHAR"/>
+        <result property="acceptanceReport" column="acceptance_report" jdbcType="VARCHAR"/>
+        <result property="taskSource" column="task_source" jdbcType="VARCHAR"/>
+        <result property="projectArea" column="project_area" jdbcType="OTHER"/>
+        <result property="scale" column="scale" jdbcType="VARCHAR"/>
+        <result property="sheetNumber" column="sheet_number" jdbcType="VARCHAR"/>
+        <result property="awardsDepartment" column="awards_department" jdbcType="VARCHAR"/>
+        <result property="prizeLevel" column="prize_level" jdbcType="VARCHAR"/>
+        <result property="projectQualityApproval" column="project_quality_approval" jdbcType="VARCHAR"/>
+        <result property="winningTime" column="winning_time" jdbcType="OTHER"/>
+        <result property="acceptanceTime" column="acceptance_time" jdbcType="OTHER"/>
+        <result property="basicContent" column="basic_content" jdbcType="VARCHAR"/>
+        <result property="creditStatus" column="credit_status" jdbcType="VARCHAR"/>
+        <result property="submitStatus" column="submit_status" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="schedule" column="schedule" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="OTHER"/>
+        <result property="modifyTime" column="modify_time" jdbcType="OTHER"/>
+        <result property="memo" column="memo" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="auditStatus" column="audit_status" jdbcType="INTEGER"/>
+        <result property="resultsStatus" column="results_status" jdbcType="INTEGER"/>
+        <result property="coordinate" column="coordinate" jdbcType="OTHER"/>
+        <result property="meridian" column="meridian" jdbcType="VARCHAR"/>
+        <result property="coordinateSystem" column="coordinate_system" jdbcType="VARCHAR"/>
+        <result property="managementLevel" column="management_level" jdbcType="VARCHAR"/>
+        <result property="fundingSource" column="funding_source" jdbcType="VARCHAR"/>
+        <result property="entrustUnit" column="entrust_unit" jdbcType="VARCHAR"/>
+        <result property="acceptUnit" column="accept_unit" jdbcType="VARCHAR"/>
+        <result property="mobilePhone" column="mobile_phone" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="centerPoint" column="center_point" jdbcType="VARCHAR"/>
+        <result property="synchronizationStatus" column="synchronization_status" jdbcType="INTEGER"/>
+        <result property="contractTime" column="contract_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TMappingProjectMap">
+        select
+          id, project_type, project_name, project_amount, project_leader, start_date, end_date, complete_time, acceptance_department, acceptance_report, task_source, project_area, scale, sheet_number, awards_department, prize_level, project_quality_approval, winning_time, acceptance_time, basic_content, credit_status, submit_status, user_id, schedule, create_time, modify_time, memo, status, audit_status, results_status, coordinate, meridian, coordinate_system, management_level, funding_source, entrust_unit, accept_unit, mobile_phone, phone, address, center_point, synchronization_status, contract_time
+        from two_project.t_mapping_project
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TMappingProjectMap">
+        select
+          id, project_type, project_name, project_amount, project_leader, start_date, end_date, complete_time, acceptance_department, acceptance_report, task_source, project_area, scale, sheet_number, awards_department, prize_level, project_quality_approval, winning_time, acceptance_time, basic_content, credit_status, submit_status, user_id, schedule, create_time, modify_time, memo, status, audit_status, results_status, coordinate, meridian, coordinate_system, management_level, funding_source, entrust_unit, accept_unit, mobile_phone, phone, address, center_point, synchronization_status, contract_time
+        from two_project.t_mapping_project
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TMappingProjectMap">
+        select
+          id, project_type, project_name, project_amount, project_leader, start_date, end_date, complete_time, acceptance_department, acceptance_report, task_source, project_area, scale, sheet_number, awards_department, prize_level, project_quality_approval, winning_time, acceptance_time, basic_content, credit_status, submit_status, user_id, schedule, create_time, modify_time, memo, status, audit_status, results_status, coordinate, meridian, coordinate_system, management_level, funding_source, entrust_unit, accept_unit, mobile_phone, phone, address, center_point, synchronization_status, contract_time
+        from two_project.t_mapping_project
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="projectType != null and projectType != ''">
+                and project_type = #{projectType}
+            </if>
+            <if test="projectName != null and projectName != ''">
+                and project_name = #{projectName}
+            </if>
+            <if test="projectAmount != null">
+                and project_amount = #{projectAmount}
+            </if>
+            <if test="projectLeader != null and projectLeader != ''">
+                and project_leader = #{projectLeader}
+            </if>
+            <if test="startDate != null">
+                and start_date = #{startDate}
+            </if>
+            <if test="endDate != null">
+                and end_date = #{endDate}
+            </if>
+            <if test="completeTime != null and completeTime != ''">
+                and complete_time = #{completeTime}
+            </if>
+            <if test="acceptanceDepartment != null and acceptanceDepartment != ''">
+                and acceptance_department = #{acceptanceDepartment}
+            </if>
+            <if test="acceptanceReport != null and acceptanceReport != ''">
+                and acceptance_report = #{acceptanceReport}
+            </if>
+            <if test="taskSource != null and taskSource != ''">
+                and task_source = #{taskSource}
+            </if>
+            <if test="projectArea != null">
+                and project_area = #{projectArea}
+            </if>
+            <if test="scale != null and scale != ''">
+                and scale = #{scale}
+            </if>
+            <if test="sheetNumber != null and sheetNumber != ''">
+                and sheet_number = #{sheetNumber}
+            </if>
+            <if test="awardsDepartment != null and awardsDepartment != ''">
+                and awards_department = #{awardsDepartment}
+            </if>
+            <if test="prizeLevel != null and prizeLevel != ''">
+                and prize_level = #{prizeLevel}
+            </if>
+            <if test="projectQualityApproval != null and projectQualityApproval != ''">
+                and project_quality_approval = #{projectQualityApproval}
+            </if>
+            <if test="winningTime != null">
+                and winning_time = #{winningTime}
+            </if>
+            <if test="acceptanceTime != null">
+                and acceptance_time = #{acceptanceTime}
+            </if>
+            <if test="basicContent != null and basicContent != ''">
+                and basic_content = #{basicContent}
+            </if>
+            <if test="creditStatus != null and creditStatus != ''">
+                and credit_status = #{creditStatus}
+            </if>
+            <if test="submitStatus != null and submitStatus != ''">
+                and submit_status = #{submitStatus}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="schedule != null">
+                and schedule = #{schedule}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="modifyTime != null">
+                and modify_time = #{modifyTime}
+            </if>
+            <if test="memo != null and memo != ''">
+                and memo = #{memo}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="auditStatus != null">
+                and audit_status = #{auditStatus}
+            </if>
+            <if test="resultsStatus != null">
+                and results_status = #{resultsStatus}
+            </if>
+            <if test="coordinate != null">
+                and coordinate = #{coordinate}
+            </if>
+            <if test="meridian != null and meridian != ''">
+                and meridian = #{meridian}
+            </if>
+            <if test="coordinateSystem != null and coordinateSystem != ''">
+                and coordinate_system = #{coordinateSystem}
+            </if>
+            <if test="managementLevel != null and managementLevel != ''">
+                and management_level = #{managementLevel}
+            </if>
+            <if test="fundingSource != null and fundingSource != ''">
+                and funding_source = #{fundingSource}
+            </if>
+            <if test="entrustUnit != null and entrustUnit != ''">
+                and entrust_unit = #{entrustUnit}
+            </if>
+            <if test="acceptUnit != null and acceptUnit != ''">
+                and accept_unit = #{acceptUnit}
+            </if>
+            <if test="mobilePhone != null and mobilePhone != ''">
+                and mobile_phone = #{mobilePhone}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="centerPoint != null and centerPoint != ''">
+                and center_point = #{centerPoint}
+            </if>
+            <if test="synchronizationStatus != null">
+                and synchronization_status = #{synchronizationStatus}
+            </if>
+            <if test="contractTime != null">
+                and contract_time = #{contractTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into two_project.t_mapping_project(project_type, project_name, project_amount, project_leader, start_date, end_date, complete_time, acceptance_department, acceptance_report, task_source, project_area, scale, sheet_number, awards_department, prize_level, project_quality_approval, winning_time, acceptance_time, basic_content, credit_status, submit_status, user_id, schedule, create_time, modify_time, memo, status, audit_status, results_status, coordinate, meridian, coordinate_system, management_level, funding_source, entrust_unit, accept_unit, mobile_phone, phone, address, center_point, synchronization_status, contract_time)
+        values (#{projectType}, #{projectName}, #{projectAmount}, #{projectLeader}, #{startDate}, #{endDate}, #{completeTime}, #{acceptanceDepartment}, #{acceptanceReport}, #{taskSource}, #{projectArea}, #{scale}, #{sheetNumber}, #{awardsDepartment}, #{prizeLevel}, #{projectQualityApproval}, #{winningTime}, #{acceptanceTime}, #{basicContent}, #{creditStatus}, #{submitStatus}, #{userId}, #{schedule}, #{createTime}, #{modifyTime}, #{memo}, #{status}, #{auditStatus}, #{resultsStatus}, #{coordinate}, #{meridian}, #{coordinateSystem}, #{managementLevel}, #{fundingSource}, #{entrustUnit}, #{acceptUnit}, #{mobilePhone}, #{phone}, #{address}, #{centerPoint}, #{synchronizationStatus}, #{contractTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update two_project.t_mapping_project
+        <set>
+            <if test="projectType != null and projectType != ''">
+                project_type = #{projectType},
+            </if>
+            <if test="projectName != null and projectName != ''">
+                project_name = #{projectName},
+            </if>
+            <if test="projectAmount != null">
+                project_amount = #{projectAmount},
+            </if>
+            <if test="projectLeader != null and projectLeader != ''">
+                project_leader = #{projectLeader},
+            </if>
+            <if test="startDate != null">
+                start_date = #{startDate},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate},
+            </if>
+            <if test="completeTime != null and completeTime != ''">
+                complete_time = #{completeTime},
+            </if>
+            <if test="acceptanceDepartment != null and acceptanceDepartment != ''">
+                acceptance_department = #{acceptanceDepartment},
+            </if>
+            <if test="acceptanceReport != null and acceptanceReport != ''">
+                acceptance_report = #{acceptanceReport},
+            </if>
+            <if test="taskSource != null and taskSource != ''">
+                task_source = #{taskSource},
+            </if>
+            <if test="projectArea != null">
+                project_area = #{projectArea},
+            </if>
+            <if test="scale != null and scale != ''">
+                scale = #{scale},
+            </if>
+            <if test="sheetNumber != null and sheetNumber != ''">
+                sheet_number = #{sheetNumber},
+            </if>
+            <if test="awardsDepartment != null and awardsDepartment != ''">
+                awards_department = #{awardsDepartment},
+            </if>
+            <if test="prizeLevel != null and prizeLevel != ''">
+                prize_level = #{prizeLevel},
+            </if>
+            <if test="projectQualityApproval != null and projectQualityApproval != ''">
+                project_quality_approval = #{projectQualityApproval},
+            </if>
+            <if test="winningTime != null">
+                winning_time = #{winningTime},
+            </if>
+            <if test="acceptanceTime != null">
+                acceptance_time = #{acceptanceTime},
+            </if>
+            <if test="basicContent != null and basicContent != ''">
+                basic_content = #{basicContent},
+            </if>
+            <if test="creditStatus != null and creditStatus != ''">
+                credit_status = #{creditStatus},
+            </if>
+            <if test="submitStatus != null and submitStatus != ''">
+                submit_status = #{submitStatus},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="schedule != null">
+                schedule = #{schedule},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime},
+            </if>
+            <if test="memo != null and memo != ''">
+                memo = #{memo},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="auditStatus != null">
+                audit_status = #{auditStatus},
+            </if>
+            <if test="resultsStatus != null">
+                results_status = #{resultsStatus},
+            </if>
+            <if test="coordinate != null">
+                coordinate = #{coordinate},
+            </if>
+            <if test="meridian != null and meridian != ''">
+                meridian = #{meridian},
+            </if>
+            <if test="coordinateSystem != null and coordinateSystem != ''">
+                coordinate_system = #{coordinateSystem},
+            </if>
+            <if test="managementLevel != null and managementLevel != ''">
+                management_level = #{managementLevel},
+            </if>
+            <if test="fundingSource != null and fundingSource != ''">
+                funding_source = #{fundingSource},
+            </if>
+            <if test="entrustUnit != null and entrustUnit != ''">
+                entrust_unit = #{entrustUnit},
+            </if>
+            <if test="acceptUnit != null and acceptUnit != ''">
+                accept_unit = #{acceptUnit},
+            </if>
+            <if test="mobilePhone != null and mobilePhone != ''">
+                mobile_phone = #{mobilePhone},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="centerPoint != null and centerPoint != ''">
+                center_point = #{centerPoint},
+            </if>
+            <if test="synchronizationStatus != null">
+                synchronization_status = #{synchronizationStatus},
+            </if>
+            <if test="contractTime != null">
+                contract_time = #{contractTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from two_project.t_mapping_project where id = #{id}
+    </delete>
+
+</mapper>
