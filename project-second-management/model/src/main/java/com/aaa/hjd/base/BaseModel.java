@@ -28,7 +28,6 @@ public class BaseModel implements Serializable {
     @Id
     @GeneratedValue(generator = "JDBC")//新增返回主键
     private Long id;
-
     @Column(name = "create_time")
     @Max(value = 100,message = "时间最长不能超过100")
     private String createTime;

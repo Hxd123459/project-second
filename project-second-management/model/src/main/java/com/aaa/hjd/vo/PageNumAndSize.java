@@ -1,25 +1,27 @@
 package com.aaa.hjd.vo;
 
-import com.aaa.hjd.model.TUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-import java.util.List;
-
 /**
  * @author 19435
  * user : 秀仔
- * Data: 2020/5/22
+ * Data: 2020/5/26
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UpdateUserVo implements Serializable {
-    private List roleIDs;
-    private TUser user;
+public class PageNumAndSize {
 
+    /**
+     * 每页几条
+     */
+    private Integer pageSize;
+    /**
+     * 第几页
+     */
+    private Integer pageNum;
 }

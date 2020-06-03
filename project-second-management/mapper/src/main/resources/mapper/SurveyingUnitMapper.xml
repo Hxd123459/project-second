@@ -56,6 +56,18 @@
     <result property="score" column="score" jdbcType="INTEGER"/>
     <result property="filingBusiness" column="filing_business" jdbcType="VARCHAR"/>
   </resultMap>
-
+  <select id="getMappingUnitByUserId" parameterType="Long" resultType="HashMap">
+    select owned_district,company_type,unit_name,used_name,
+      register_address_postcode,register_address,register_time,
+      oa,corporation,oa_postcode,oa_area,register_fund,linkman,
+      establish_time,mobile_phone,phone,fax_num,email,staff_num,
+      surveying_num,unit_nature,belong_industry,certificate_code,
+      certificate_send_date,qualification_level,social_credit_code,
+      company_type,stock_details,joint_venture,joint_ch_p,joint_ratify_code,
+      competent_depart,organization_code,unit_code,first_qualification_level,
+      first_qualification_date,filing_business,business_scope,unit_intro,
+      qualification_process
+      from t_mapping_unit where user_id = #{userId}
+  </select>
 
 </mapper>

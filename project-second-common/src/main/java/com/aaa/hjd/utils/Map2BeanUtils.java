@@ -49,11 +49,11 @@ public class Map2BeanUtils {
             // 就是为了获取下一步的get和set方法
 
             CONCURRENT_HASH_MAP.put(clazz,methodAccess);
-            for (Map.Entry<String,Object> entry:map.entrySet()) {
-                String setMethodName = setMethodName(entry.getKey());
-                int index = methodAccess.getIndex(setMethodName, entry.getValue().getClass());
-                methodAccess.invoke(instance,index,entry.getValue());
-            }
+        }
+        for (Map.Entry<String,Object> entry:map.entrySet()) {
+            String setMethodName = setMethodName(entry.getKey());
+            int index = methodAccess.getIndex(setMethodName, entry.getValue().getClass());
+            methodAccess.invoke(instance,index,entry.getValue());
         }
         return instance;
     }

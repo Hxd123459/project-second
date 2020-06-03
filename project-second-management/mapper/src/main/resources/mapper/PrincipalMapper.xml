@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.hjd.mapper.PrincipalMapper">
+  <resultMap id="BaseResultMap" type="com.aaa.hjd.model.Principal">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id_type" jdbcType="VARCHAR" property="idType" />
+    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="work_year" jdbcType="INTEGER" property="workYear" />
+    <result column="duty" jdbcType="VARCHAR" property="duty" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="mapping_year" jdbcType="INTEGER" property="mappingYear" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="modify_time" jdbcType="DATE" property="modifyTime" />
+  </resultMap>
+
+  <select id="getPrincipalByUserId" parameterType="Long" resultType="HashMap">
+    select id,type,`name`,id_number,
+      sex,age,major,title
+      from t_principal where user_id = #{userId}
+  </select>
+
+  <select id="getPrincipalResource" resultType="HashMap" parameterType="Long">
+    SELECT id,`name`,path,ext_name from t_resource where ref_biz_id = #{principalId}
+  </select>
+
+</mapper>

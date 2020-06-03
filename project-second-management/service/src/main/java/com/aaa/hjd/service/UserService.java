@@ -44,10 +44,11 @@ public class UserService extends BaseService<TUser> {
     public PageInfo getUserAll(HashMap<String, Integer> map){
         PageHelper.startPage(ObjectUtil.transToInt(map.get("pageNum")),ObjectUtil.transToInt(map.get("pageSize")));
         //查询所有数据
-        List<HashMap<String, Object>> userAll = userMapper.getUserAll();
-        //获取分页信息
-        PageInfo pageInfo = new PageInfo(userAll);
-        if (null != pageInfo){
+        List<HashMap<String, Object>> list = userMapper.getUserAll();
+
+        if (0 < list.size()){
+            //获取分页信息
+            PageInfo pageInfo = new PageInfo(list);
             //返回数据
             return pageInfo;
         }
@@ -122,13 +123,13 @@ public class UserService extends BaseService<TUser> {
      public Integer updataUserByID (UpdateUserVo updateUserVo) {
          try {
              //根据用户的id删除用户的所有角色
-             Integer delRole = userMapper.deleteUserRoleByID(updateUserVo.getId());
+             Integer delRole = userMapper.deleteUserRoleByID(updateUserVo.getUser().getId());
              //判断是否需要新增角色
              if (updateUserVo.getRoleIDs().size()>0){
                  //为用户新增新的角色
                  HashMap map = new HashMap();
                  //放入用户id
-                 map.put("id",updateUserVo.getId());
+                 map.put("id",updateUserVo.getUser().getId());
                  //放入角色id数组
                  map.put("roleIDs", updateUserVo.getRoleIDs());
                  //执行新增
@@ -172,7 +173,8 @@ public class UserService extends BaseService<TUser> {
         //获取新增用户主键
         Long userID = updateUserVo.getUser().getId();
         //判断是否需要新增角色
-        if (updateUserVo.getRoleIDs().size()>0){
+        if (null != updateUserVo.getRoleIDs() && 0 < updateUserVo.getRoleIDs().size()){
+            //int a = 1/0;测试会自动回滚
             //为用户新增新的角色
             HashMap map = new HashMap();
             //放入用户id
@@ -261,6 +263,7 @@ public class UserService extends BaseService<TUser> {
      * @throws
      */
     public List<HashMap<String, Object>>  selectUser(UserSelectVo userSelectVo){
+        //TODO
         List<HashMap<String, Object>> list = userMapper.selectUser(userSelectVo);
         return list;
     }
