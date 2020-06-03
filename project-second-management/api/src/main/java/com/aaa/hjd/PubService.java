@@ -2,11 +2,11 @@ package com.aaa.hjd;
 
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.model.*;
-import com.aaa.hjd.vo.PageNumAndSize;
-import com.aaa.hjd.vo.TokenVo;
-import com.aaa.hjd.vo.UpdateUserVo;
+import com.aaa.hjd.vo.*;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -506,6 +506,137 @@ public interface PubService {
     @PostMapping("updateTechnicist")
     ResultData updateTechnicist(@RequestBody Technicist technicist);
 
+    /**
+     * 获取指定用户的项目信息，带有分页
+     * @param mappingProjectPageVo
+     * @return
+     */
+    @PostMapping(value = "/getMappingProjectByPage")
+    ResultData getMappingProjectByPage(@RequestBody TMappingProjectPageVo mappingProjectPageVo);
 
+    /**
+     * 添加项目信息
+     * @param fileOfRangeLine2
+     * @param fileOfRangeLine3
+     * @param fileOfContract
+     * @param fileOfContract2
+     * @param fileOfContract3
+     * @param coordinateSystem
+     * @param meridian
+     * @param projectType
+     * @param managementLevel
+     * @param fundingSource
+     * @param projectName
+     * @param heightDatum
+     * @param entrustUnit
+     * @param acceptUnit
+     * @param projectAmount
+     * @param projectLeader
+     * @param mobilePhone
+     * @param phone
+     * @param address
+     * @param startDate
+     * @param endDate
+     * @param acceptanceDepartment
+     * @param acceptanceReport
+     * @param projectArea
+     * @param scale
+     * @param sheetNumber
+     * @param awardsDepartment
+     * @param prizeLevel
+     * @param projectQualityApproval
+     * @param winningTime
+     * @param acceptanceTime
+     * @param basicContent
+     * @param creditStatus
+     * @param submitStatus
+     * @param userId
+     * @return
+     */
+    @PostMapping(value = "/addMappingProject",consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    ResultData addMappingProject(@RequestPart(value = "fileOfRangeLine",required = false)
+                                         MultipartFile fileOfRangeLine,
+                                 @RequestPart(value = "fileOfRangeLine2",required = false)
+                                         MultipartFile fileOfRangeLine2,
+                                 @RequestPart(value = "fileOfRangeLine3",required = false)
+                                         MultipartFile fileOfRangeLine3,
+                                 @RequestPart(value = "fileOfContract",required = false)
+                                         MultipartFile fileOfContract,
+                                 @RequestPart(value = "fileOfContract2",required = false)
+                                         MultipartFile fileOfContract2,
+                                 @RequestPart(value = "fileOfContract3",required = false)
+                                         MultipartFile fileOfContract3,
+                                 @RequestParam(value = "coordinateSystem") String coordinateSystem,
+                                 @RequestParam(value = "meridian") String meridian,
+                                 @RequestParam(value = "projectType") String projectType,
+                                 @RequestParam(value = "managementLevel") String managementLevel,
+                                 @RequestParam(value = "fundingSource") String fundingSource,
+                                 @RequestParam(value = "projectName") String projectName,
+                                 @RequestParam(value = "heightDatum") String heightDatum,
+                                 @RequestParam(value = "entrustUnit",required = false) String entrustUnit,
+                                 @RequestParam(value = "acceptUnit",required = false) String acceptUnit,
+                                 @RequestParam(value = "projectAmount",required = false) String projectAmount,
+                                 @RequestParam(value = "projectLeader",required = false) String projectLeader,
+                                 @RequestParam(value = "mobilePhone",required = false) String mobilePhone,
+                                 @RequestParam(value = "phone",required = false) String phone,
+                                 @RequestParam(value = "address",required = false) String address,
+                                 @RequestParam(value = "startDate") String startDate,
+                                 @RequestParam(value = "endDate",required = false) String endDate,
+                                 @RequestParam(value = "acceptanceDepartment",required = false) String acceptanceDepartment,
+                                 @RequestParam(value = "acceptanceReport",required = false) String acceptanceReport,
+                                 @RequestParam(value = "projectArea",required = false) String projectArea,
+                                 @RequestParam(value = "scale",required = false) String scale,
+                                 @RequestParam(value = "sheetNumber",required = false) String sheetNumber,
+                                 @RequestParam(value = "awardsDepartment",required = false) String awardsDepartment,
+                                 @RequestParam(value = "prizeLevel",required = false) String prizeLevel,
+                                 @RequestParam(value = "projectQualityApproval",required = false) String projectQualityApproval,
+                                 @RequestParam(value = "winningTime",required = false) String winningTime,
+                                 @RequestParam(value = "acceptanceTime",required = false) String acceptanceTime,
+                                 @RequestParam(value = "basicContent",required = false) String basicContent,
+                                 @RequestParam(value = "creditStatus",required = false) String creditStatus,
+                                 @RequestParam(value = "submitStatus",required = false) String submitStatus,
+                                 @RequestParam(value = "userId") Long userId);
+
+
+    /**
+     * 查询字典数据带分页，带条件查询
+     * @param dictVo
+     * @return
+     */
+    @PostMapping("/selectDictByPage")
+    ResultData selectDictByPage(@RequestBody DictVo dictVo);
+
+    /**
+     * 通过id查询字典数据
+     * @param tDict
+     * @return
+     */
+    @PostMapping("/selectDictById")
+    ResultData selectDictById(@RequestBody TDict tDict);
+
+    /**
+     * 通过id更新字典数据
+     * @param dict
+     * @return
+     */
+    @PostMapping("/updateDictById")
+    ResultData updateDictById(@RequestBody TDict dict);
+
+    /**
+     * 添加字典信息
+     * @param tDict
+     * @return
+     */
+    @PostMapping("/addDict")
+    ResultData addDict(@RequestBody TDict tDict);
+
+    /**
+     * 通过id批量删除字典数据
+     * @param ids
+     * @return
+     */
+    @PostMapping("/deleteBatchByIds")
+    ResultData deleteBatchByIds(@RequestBody List<Object> ids);
 
 }
