@@ -1,5 +1,6 @@
 package com.aaa.hjd.utils;
 
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
 import org.junit.jupiter.api.Test;
@@ -54,12 +55,14 @@ public class FtpUtils {
                     if(!ftpClient.changeWorkingDirectory(tmpPath)) {
                         // 13.创建文件夹
                         // makeDirectory()--->就是创建文件夹的方法，返回为bolean
-                        if(!ftpClient.makeDirectory(dir)) {
+                        if(!ftpClient.makeDirectory(tmpPath)) {
                             return false;
                         }
                     }
                 }
             }
+            //二进制上传
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
             if (!ftpClient.storeFile(fileName,input)) {
                 //文件上传失败
                 return false;
@@ -85,12 +88,12 @@ public class FtpUtils {
 
     @Test
     public void testDemo(){
-        File file = new File("D:/Rar.txt");
+        File file = new File("D:/snake.jpg");
         try {
             InputStream inputStream=new FileInputStream(file);
-            boolean test = FtpUtils.UploadFile("192.168.152.141",21,"ftpuser",
-                    "123","/home/ftp","2020/05/15","test2.txt",inputStream);
-            System.out.println(test);
+            boolean test = FtpUtils.UploadFile("192.168.111.138",21,"zwc",
+                    "123456","/home/zwc","2020/05/29","snake11.jpg",inputStream);
+            System.out.println(test + "222");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

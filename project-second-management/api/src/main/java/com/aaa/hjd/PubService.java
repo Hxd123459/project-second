@@ -1,18 +1,17 @@
 package com.aaa.hjd;
 
 import com.aaa.hjd.base.ResultData;
-
-
-import com.aaa.hjd.model.TMenu;
-
-import com.aaa.hjd.model.TUser;
+import com.aaa.hjd.model.*;
+import com.aaa.hjd.vo.PageNumAndSize;
 import com.aaa.hjd.vo.TokenVo;
 import com.aaa.hjd.vo.UpdateUserVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -74,7 +73,7 @@ public interface PubService {
      */
     @ResponseBody
     @PostMapping("/addMenuOrButton")
-     ResultData addMenuOrButton(@RequestBody TMenu tMenu);
+    ResultData addMenuOrButton(@RequestBody TMenu tMenu);
 
     /**
      * 删除菜单或者是按钮根据id
@@ -102,6 +101,8 @@ public interface PubService {
     @ResponseBody
     @PostMapping("/selectMenuOrButtonById")
     ResultData selectMenuOrButtonById(@RequestBody TMenu tMenu);
+
+
     /**
      * @date:  2020/5/22
      * @author: 秀仔
@@ -209,4 +210,302 @@ public interface PubService {
      */
     @GetMapping("getUserSsex")
     public ResultData getUserSsex();
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id查询单位信息，自动获取当前用户id
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @GetMapping("/getMappingUnit")
+    ResultData getMappingUnit();
+
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id查询单位信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getMappingUnitByUserId")
+    ResultData getMappingUnitByUserId(@RequestParam("userId")Long userId);
+
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 更新单位信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/updateMappingUnit")
+    ResultData updateMappingUnit(@RequestBody TMappingUnit tMappingUnit);
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取设备信息--分页
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getEquipment")
+    public ResultData getEquipment(@RequestBody PageNumAndSize pageNumAndSize);
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取设备信息--分页
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getEquipmentByUserId")
+    public ResultData getEquipmentByUserId(@RequestBody HashMap map);
+
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 根据id数组删除设备信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @DeleteMapping("/deleteEquipmentByIDs")
+    ResultData deleteEquipmentByIDs(@RequestBody List<Object> ids);
+
+
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 新增设备信息
+     * @param [map]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("insertEquipment")
+    ResultData insertEquipment(@RequestBody Equipment equipment);
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 修改设备信息
+     * @param [map]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/updateEquipment")
+    ResultData updateEquipment(@RequestBody Equipment equipment);
+
+
+    /**
+     * @date:  2020/5/26
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取单位负责人信息
+     * 需要自己获取到当前登录用户的id
+     * @param [session]
+     * @return java.util.HashMap<java.lang.String,java.lang.Object>
+     * @throws
+     */
+    @PostMapping("/getPrincipal")
+    ResultData getPrincipal(@RequestBody PageNumAndSize pageNumAndSize);
+
+
+    /**
+     * @date:  2020/5/26
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取单位负责人信息
+     * 需要自己获取到当前登录用户的id
+     * @param [session]
+     * @return java.util.HashMap<java.lang.String,java.lang.Object>
+     * @throws
+     */
+    @PostMapping("/getPrincipalByUserId")
+    ResultData getPrincipalByUserId(@RequestBody HashMap map);
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 新增单位负责人信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("addPrincipal")
+    ResultData addPrincipal (@RequestBody Principal principal);
+
+
+    /**
+     * @date:  2020/5/29
+     * @author: 秀仔
+     * @Description
+     * 修改负责人信息
+     * @param [principal]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/updatePrincipal")
+    ResultData updatePrincipal(@RequestBody Principal principal);
+
+    /**
+     * @date:  2020/5/29
+     * @author: 秀仔
+     * @Description
+     * 删除负责人信息
+     * @param [principal]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @DeleteMapping("/deletePrincipals")
+    ResultData deletePrincipals(@RequestBody List ids);
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 查询单位负责人附件信息
+     * @param
+     * @return
+     * @throws
+     */
+    @PostMapping("/getPrincipalResource")
+    ResultData getPrincipalResource(@RequestParam("principalId") Long principalId);
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取特殊人员信息，自动获取当前登录的用户id
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getSpecialPost")
+    ResultData getSpecialPost(@RequestBody PageNumAndSize pageNumAndSize);
+
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取特殊人员信息
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getSpecialPostByUserId")
+    ResultData getSpecialPostByUserId(@RequestBody HashMap map);
+
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 新增特殊人员信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("addSpecialPost")
+    ResultData addSpecialPost (@RequestBody SpecialPost specialPost);
+
+    /**
+     * @date:  2020/5/29
+     * @author: 秀仔
+     * @Description
+     * 修改特殊人员信息
+     * @param [principal]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/updateSpecialPost")
+    ResultData updateSpecialPost(@RequestBody SpecialPost specialPost);
+
+    /**
+     * @date:  2020/5/29
+     * @author: 秀仔
+     * @Description
+     * 删除特殊人员信息
+     * @param [principal]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @DeleteMapping("/deleteSpecialPostByIDs")
+    ResultData deleteSpecialPostByIDs(@RequestBody List<Object> ids);
+
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取技术人员信息，id需要根据当前登录用户获取
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getTechnicist")
+    ResultData getTechnicist(@RequestBody PageNumAndSize pageNumAndSize);
+
+    /**
+     * @date:  2020/5/28
+     * @author: 秀仔
+     * @Description
+     * 根据用户id获取技术人员信息
+     * @param [pageNumAndSize]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("/getTechnicistByUserId")
+    ResultData getTechnicistByUserId(@RequestBody HashMap map);
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 根据id数组删除技术人员信息
+     * @param []
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @DeleteMapping("/deleteTechnicistByIDs")
+    ResultData deleteTechnicistByIDs(@RequestBody List<Object> ids);
+
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 新增技术人员信息
+     * @param [map]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("insertTechnicist")
+    ResultData insertTechnicist(@RequestBody Technicist technicist);
+
+    /**
+     * @date:  2020/6/2
+     * @author: 秀仔
+     * @Description
+     * 修改技术人员信息
+     * @param [map]
+     * @return com.aaa.hjd.base.ResultData
+     * @throws
+     */
+    @PostMapping("updateTechnicist")
+    ResultData updateTechnicist(@RequestBody Technicist technicist);
+
+
+
 }

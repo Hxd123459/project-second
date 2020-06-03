@@ -7,6 +7,7 @@ import lombok.NonNull;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import java.io.Serializable;
@@ -25,8 +26,8 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class BaseModel implements Serializable {
     @Id
+    @GeneratedValue(generator = "JDBC")//新增返回主键
     private Long id;
-
     @Column(name = "create_time")
     @Max(value = 100,message = "时间最长不能超过100")
     private String createTime;

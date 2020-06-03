@@ -22,5 +22,12 @@ import java.io.Serializable;
 public class ResultData<T> implements Serializable {
     private String code;
     private String msg;
+    private String detail;
     private T data;
+
+    public ResultData(String code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
 }

@@ -1,220 +1,321 @@
 package com.aaa.hjd.model;
 
 import com.aaa.hjd.base.BaseModel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-
-/**
- * 测绘单位表(TMappingUnit)实体类
- *
- * @author makejava
- * @since 2020-05-19 14:13:24
- */
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 @Data
-public class TMappingUnit extends BaseModel implements Serializable {
-    private static final long serialVersionUID = 553845369324883601L;
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
+@Table(name = "`t_mapping_unit`")
+public class TMappingUnit extends BaseModel {
+
     /**
-    * 备注
-    */
+     * 备注
+     */
+    @Column(name = "`memo`")
     private String memo;
+
     /**
-    * 单位名称
-    */
+     * 单位名称
+     */
+    @Column(name = "`unit_name`")
     private String unitName;
+
     /**
-    * 注册地址
-    */
+     * 注册地址
+     */
+    @Column(name = "`register_address`")
     private String registerAddress;
+
     /**
-    * 注册时间
-    */
-    private Object registerTime;
+     * 注册时间
+     */
+    @Column(name = "`register_time`")
+    private String registerTime;
+
     /**
-    * 办公地址
-    */
+     * 办公地址
+     */
+    @Column(name = "`oa`")
     private String oa;
+
     /**
-    * 法人
-    */
+     * 法人
+     */
+    @Column(name = "`corporation`")
     private String corporation;
+
     /**
-    * 联系人
-    */
+     * 联系人
+     */
+    @Column(name = "`linkman`")
     private String linkman;
+
     /**
-    * 所属行政区
-    */
+     * 所属行政区
+     */
+    @Column(name = "`owned_district`")
     private String ownedDistrict;
+
     /**
-    * 注册资金(万元)
-    */
-    private Object registerFund;
+     * 注册资金(万元)
+     */
+    @Column(name = "`register_fund`")
+    private Double registerFund;
+
     /**
-    * 统一社会信用代码
-    */
+     * 统一社会信用代码
+     */
+    @Column(name = "`social_credit_code`")
     private String socialCreditCode;
+
     /**
-    * 资质等级
-    */
+     * 资质等级
+     */
+    @Column(name = "`qualification_level`")
     private String qualificationLevel;
+
     /**
-    * 联系电话
-    */
+     * 联系电话
+     */
+    @Column(name = "`phone`")
     private String phone;
+
     /**
-    * 联系方式
-    */
+     * 联系方式
+     */
+    @Column(name = "`contact_way`")
     private String contactWay;
+
     /**
-    * 业务范围
-    */
-    private String businessScope;
-    /**
-    * 单位简介
-    */
-    private String unitIntro;
-    /**
-    * 单位曾用名
-    */
+     * 单位曾用名
+     */
+    @Column(name = "`used_name`")
     private String usedName;
+
     /**
-    * 注册地址经度
-    */
+     * 注册地址经度
+     */
+    @Column(name = "`register_address_lon`")
     private String registerAddressLon;
+
     /**
-    * 注册单位纬度
-    */
+     * 注册单位纬度
+     */
+    @Column(name = "`register_address_lat`")
     private String registerAddressLat;
+
     /**
-    * 注册地址邮编
-    */
+     * 注册地址邮编
+     */
+    @Column(name = "`register_address_postcode`")
     private String registerAddressPostcode;
+
     /**
-    * 办公地址邮编
-    */
+     * 办公地址邮编
+     */
+    @Column(name = "`oa_postcode`")
     private String oaPostcode;
+
     /**
-    * 办公场所面积（平方米）
-    */
-    private Object oaArea;
+     * 办公场所面积（平方米）
+     */
+    @Column(name = "`oa_area`")
+    private Double oaArea;
+
     /**
-    * 单位成立时间
-    */
-    private Object establishTime;
+     * 单位成立时间
+     */
+    @Column(name = "`establish_time`")
+    private String establishTime;
+
     /**
-    * 手机号码
-    */
+     * 手机号码
+     */
+    @Column(name = "`mobile_phone`")
     private String mobilePhone;
+
     /**
-    * 传真号码
-    */
+     * 传真号码
+     */
+    @Column(name = "`fax_num`")
     private String faxNum;
+
     /**
-    * 电子邮箱
-    */
+     * 电子邮箱
+     */
+    @Column(name = "`email`")
     private String email;
+
     /**
-    * 测绘人员总数
-    */
+     * 测绘人员总数
+     */
+    @Column(name = "`surveying_num`")
     private Integer surveyingNum;
+
     /**
-    * 职工总数
-    */
+     * 职工总数
+     */
+    @Column(name = "`staff_num`")
     private Integer staffNum;
+
     /**
-    * 单位性质
-    */
+     * 单位性质
+     */
+    @Column(name = "`unit_nature`")
     private String unitNature;
+
     /**
-    * 所属行业
-    */
+     * 所属行业
+     */
+    @Column(name = "`belong_industry`")
     private String belongIndustry;
+
     /**
-    * 证书编号
-    */
+     * 证书编号
+     */
+    @Column(name = "`certificate_code`")
     private String certificateCode;
+
     /**
-    * 发证日期
-    */
-    private Object certificateSendDate;
+     * 发证日期
+     */
+    @Column(name = "`certificate_send_date`")
+    private String certificateSendDate;
+
     /**
-    * 公司类型
-    */
+     * 公司类型
+     */
+    @Column(name = "`company_type`")
     private String companyType;
+
     /**
-    * 股东及控股情况
-    */
+     * 股东及控股情况
+     */
+    @Column(name = "`stock_details`")
     private String stockDetails;
+
     /**
-    * 合资形式
-    */
+     * 合资形式
+     */
+    @Column(name = "`joint_venture`")
     private String jointVenture;
+
     /**
-    * 合资企业中方控股（%）
-    */
+     * 合资企业中方控股（%）
+     */
+    @Column(name = "`joint_ch_p`")
     private Integer jointChP;
+
     /**
-    * 合资企业批注文号
-    */
+     * 合资企业批注文号
+     */
+    @Column(name = "`joint_ratify_code`")
     private String jointRatifyCode;
+
     /**
-    * 主管部门
-    */
+     * 主管部门
+     */
+    @Column(name = "`competent_depart`")
     private String competentDepart;
+
     /**
-    * 首次取得资质等级
-    */
+     * 首次取得资质等级
+     */
+    @Column(name = "`first_qualification_level`")
     private String firstQualificationLevel;
+
     /**
-    * 首次取得资质发证日期
-    */
-    private Object firstQualificationDate;
+     * 首次取得资质发证日期
+     */
+    @Column(name = "`first_qualification_date`")
+    private String firstQualificationDate;
+
     /**
-    * 申请资质前单位进行过程
-    */
+     * 申请资质前单位进行过程
+     */
+    @Column(name = "`qualification_process`")
     private String qualificationProcess;
+
     /**
-    * 组织机构代码
-    */
+     * 组织机构代码
+     */
+    @Column(name = "`organization_code`")
     private String organizationCode;
+
     /**
-    * 单位直属类型
-    */
+     * 单位直属类型
+     */
+    @Column(name = "`unit_type`")
     private String unitType;
+
     /**
-    * 单位用户编号
-    */
-    private Object userId;
+     * 单位用户编号
+     */
+    @Column(name = "`user_id`")
+    private Long userId;
+
     /**
-    * 单位审核状态 0:通过 1:未通过 2:已提交 3:未提交
-    */
+     * 单位审核状态 0:通过 1:未通过 2:已提交 3:未提交
+     */
+    @Column(name = "`audit_status`")
     private Integer auditStatus;
+
     /**
-    * 坐标
-    */
-    private Object coordinate;
-    /**
-    * 
+     * 
 单位代码
-    */
+     */
+    @Column(name = "`unit_code`")
     private String unitCode;
+
     /**
-    * 1白名单2
+     * 1白名单2
 黑名单3待定
-    */
+     */
+    @Column(name = "`unit_status`")
     private Integer unitStatus;
+
     /**
-    * 同步状态 0：已同步 1：未同步
-    */
+     * 同步状态 0：已同步 1：未同步
+     */
+    @Column(name = "`synchronization_status`")
     private Integer synchronizationStatus;
+
     /**
-    * 单位分值 默认为100分 小于60分
+     * 单位分值 默认为100分 小于60分
 进黑名单,大于等于100分进白名单
-    */
+     */
+    @Column(name = "`score`")
     private Integer score;
+
     /**
-    * 备案业务分类: 不动产测绘和联合测绘
-    */
+     * 备案业务分类: 不动产测绘和联合测绘
+     */
+    @Column(name = "`filing_business`")
     private String filingBusiness;
+
+    /**
+     * 业务范围
+     */
+    @Column(name = "`business_scope`")
+    private String businessScope;
+
+    /**
+     * 单位简介
+     */
+    @Column(name = "`unit_intro`")
+    private String unitIntro;
+
+    /**
+     * 坐标
+     */
+    @Column(name = "`coordinate`")
+    private String coordinate;
 }

@@ -5,7 +5,11 @@ import com.aaa.hjd.service.LoginService;
 import com.aaa.hjd.service.RedisService;
 import com.aaa.hjd.vo.TokenVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,8 +26,12 @@ public class LoginController {
     @Autowired
     private RedisService redisService;
     @PostMapping("/doLogin")
-    public TokenVo doLogin(@RequestBody TUser user){
-       return loginService.doLogin(user,redisService);
+    public TokenVo doLogin(@RequestBody TUser user,HttpServletRequest request){
+        TokenVo tokenVo = loginService.doLogin(user, redisService);
+        HttpSession session = request.getSession();
+        System.out.println(tokenVo.getRedisKey()+"tokenVo.getRedisKey()");
+        session.setAttribute("tokenVo",tokenVo);
+        return tokenVo;
     }
     @RequestMapping("/turnLogin")
     public TokenVo turnLogin(){

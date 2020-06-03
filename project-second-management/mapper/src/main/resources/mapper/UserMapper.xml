@@ -22,4 +22,74 @@
     <result column="token" property="token" jdbcType="VARCHAR" />
   </resultMap>
 
+  <select id="getUserAll"  resultType="HashMap">
+   select u.id,u.username,u.email,u.status,u.create_time,u.ssex,u.`type`,u.last_login_time,description,d.DEPT_NAME from
+        t_user u left join
+				t_dept d on u.dept_id = d.DEPT_ID
+  </select>
+
+  <select id="getRoleAll"  resultType="HashMap">
+    select ROLE_ID,ROLE_NAME from t_role
+  </select>
+
+  <select id="getUserRoleByID" parameterType="Long" resultType="Long">
+    select ROLE_ID from t_user_role where USER_ID = #{id}
+  </select>
+
+  <select id="deleteUserRoleByID" parameterType="Long">
+    delete from t_user_role where USER_ID = #{id}
+  </select>
+
+  <insert id="insertUserRole" parameterType="HashMap">
+    insert into t_user_role(USER_ID,ROLE_ID) values
+    <foreach collection="roleIDs" item="roleID" separator=",">
+      (#{id},#{roleID})
+    </foreach>
+  </insert>
+
+  <select id="getDept" resultType="HashMap" parameterType="Long">
+    select DEPT_ID,DEPT_NAME from t_dept where PARENT_ID = #{parentID} order by ORDER_NUM asc
+  </select>
+
+  <select id="getUserByUsername" parameterType="String" resultType="Long">
+    select id from t_user  where username = #{username} LIMIT 1
+  </select>
+
+  <select id="getUserSsex" resultType="HashMap">
+    select KEYY,VALUEE from t_dict where FIELD_NAME = "ssex" and TABLE_NAME = "t_user"
+  </select>
+
+  <select id="getUserStatus" resultType="HashMap">
+    select KEYY,VALUEE from t_dict where FIELD_NAME = "status" and TABLE_NAME = "t_user"
+  </select>
+
+  <select id="selectUser" parameterType="com.aaa.hjd.vo.UserSelectVo" resultType="HashMap">
+    select u.id,u.username,u.email,u.status,u.create_time,u.ssex,u.`type`,u.last_login_time,description,d.DEPT_NAME from
+    t_user u left join
+    t_dept d on u.dept_id = d.DEPT_ID
+     WHERE 1=1
+    <if test="username != null">
+        and username LIKE '%${username}%'
+    </if>
+    <if test="deptId != null">
+      and dept_id = #{deptId}
+    </if>
+    <if test="status != null">
+      and status = #{status}
+    </if>
+    <if test="deptId != null">
+      and ssex = #{ssex}
+    </if>
+    <if test="startTime != null">
+
+      <if test="endTime != null">
+          and
+          unix_timestamp(create_time) BETWEEN unix_timestamp(#{startTime}) and unix_timestamp(#{endTime})
+      </if>
+    </if>
+
+
+
+
+  </select>
 </mapper>

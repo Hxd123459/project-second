@@ -3,10 +3,12 @@ package com.aaa.hjd.controller;
 import com.aaa.hjd.PubService;
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.vo.UpdateUserVo;
+import com.netflix.discovery.converters.Auto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -28,6 +30,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 查询所有用户信息带分页
+     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -41,6 +44,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 查询所有角色
+     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -55,6 +59,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 根据id获取用户的所有角色
+     * @param [id]
      * @return java.util.List<java.lang.Long>
      * @throws
      */
@@ -69,6 +74,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 根据ids删除所有用户
+     * @param []
      * @return java.lang.Integer
      * @throws
      */
@@ -82,6 +88,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 根据用户id修改用户信息
+     * @param []
      * @return java.lang.Integer
      * @throws
      */
@@ -97,6 +104,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 新增用户
+     * @param [map]
      * @return com.aaa.hjd.base.ResultData
      * @throws
      */
@@ -110,6 +118,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 获取部门层级列表
+     * @param []
      * @return com.aaa.hjd.base.ResultData
      * @throws
      */
@@ -124,6 +133,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 获取用户字典表状态值
+     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -138,6 +148,7 @@ public class UserController {
      * @author: 秀仔
      * @Description
      * 获取用户字典表性别
+     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
