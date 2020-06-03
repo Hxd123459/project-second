@@ -4,9 +4,9 @@ package com.aaa.hjd.controller;
  * Created with IntelliJ IDEA.
  *
  * @author 胡江迪
- * Date: 2020/5/26 0026
- * Time: 10:17
+ * Date: 2020/6/3 0003
+ * Time: 14:06
  * Description:
  */
-public class TMappingProjectController {
+public class MappingProjectController {
 }

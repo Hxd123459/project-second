@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c38d5613-d40a-41bf-90c7-4dc1ee0fc7a8" name="Default Changelist" comment="添加菜单管理功能">
-      <change afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils/TimeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TMenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TMenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/TMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/java/com/aaa/hjd/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/base/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/RedisFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/RedisFlag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/StatusCodeAndMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/StatusCodeAndMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-config/src/main/resources/properties/redis_cluster.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-config/src/main/resources/properties/redis_cluster.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/PubService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/PubService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/Mapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/base/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/base/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/resources/config/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/resources/config/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TDictMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TMappingProjectMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TResourceMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/MappingProjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/ResourcesService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +182,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.MenuService.test" />
+      <item itemvalue="JUnit.test.testOne" />
+      <item itemvalue="Spring Boot.ApplicationRun6081" />
+      <item itemvalue="Spring Boot.ApplicationRun7081" />
+      <item itemvalue="Spring Boot.ApplicationRun8081" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApplicationRun6081" />

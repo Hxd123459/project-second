@@ -8,7 +8,7 @@ import java.util.List;
  * 附件表(TResource)表数据库访问层
  *
  * @author makejava
- * @since 2020-05-26 21:09:28
+ * @since 2020-06-03 13:26:21
  */
 public interface TResourceDao {
 

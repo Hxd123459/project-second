@@ -8,7 +8,7 @@ import java.util.List;
  * (TDict)表数据库访问层
  *
  * @author makejava
- * @since 2020-05-23 13:22:06
+ * @since 2020-06-03 23:48:07
  */
 public interface TDictDao {
 
