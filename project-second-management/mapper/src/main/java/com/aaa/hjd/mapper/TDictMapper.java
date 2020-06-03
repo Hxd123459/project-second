@@ -1,8 +1,10 @@
-package com.aaa.hjd.mapper.dao;
+package com.aaa.hjd.mapper;
 
-import com.aaa.hjd.mapper.entity.TDict;
-import org.apache.ibatis.annotations.Param;
+import com.aaa.hjd.model.TDict;
+import tk.mybatis.mapper.common.Mapper;
+
 import java.util.List;
+
 
 /**
  * (TDict)表数据库访问层
@@ -10,56 +12,11 @@ import java.util.List;
  * @author makejava
  * @since 2020-06-03 23:48:07
  */
-public interface TDictDao {
-
+public interface TDictMapper extends Mapper<TDict> {
     /**
-     * 通过ID查询单条数据
-     *
-     * @param dictId 主键
-     * @return 实例对象
+     * 根据id批量删除字典数据
+     * @param ids
+     * @return
      */
-    TDict queryById(Long dictId);
-
-    /**
-     * 查询指定行数据
-     *
-     * @param offset 查询起始位置
-     * @param limit 查询条数
-     * @return 对象列表
-     */
-    List<TDict> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
-
-
-    /**
-     * 通过实体作为筛选条件查询
-     *
-     * @param tDict 实例对象
-     * @return 对象列表
-     */
-    List<TDict> queryAll(TDict tDict);
-
-    /**
-     * 新增数据
-     *
-     * @param tDict 实例对象
-     * @return 影响行数
-     */
-    int insert(TDict tDict);
-
-    /**
-     * 修改数据
-     *
-     * @param tDict 实例对象
-     * @return 影响行数
-     */
-    int update(TDict tDict);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param dictId 主键
-     * @return 影响行数
-     */
-    int deleteById(Long dictId);
-
+   Integer deleteBatchById(List<Object> ids);
 }

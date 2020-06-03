@@ -37,7 +37,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 查询所有用户信息带分页
-     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -59,7 +58,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 查询所有角色
-     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -78,7 +76,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 根据id获取用户的所有角色
-     * @param [id]
      * @return java.util.List<java.lang.Long>
      * @throws
      */
@@ -95,7 +92,6 @@ public class UserService extends BaseService<TUser> {
       * @author: 秀仔
       * @Description
       * 根据ids删除所有用户
-      * @param []
       * @return java.lang.Integer
       * @throws
       */
@@ -115,7 +111,6 @@ public class UserService extends BaseService<TUser> {
       * @author: 秀仔
       * @Description
       * 根据用户id修改用户信息
-      * @param []
       * @return java.lang.Integer
       * @throws
       */
@@ -153,7 +148,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 新增用户
-     * @param [updateUserVo]
      * @return com.aaa.hjd.base.ResultData
      * @throws
      */
@@ -196,7 +190,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 根据parentID获取部门名
-     * @param [parentID]
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -220,7 +213,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 获取用户字典表状态值
-     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -239,7 +231,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 获取用户字典表性别
-     * @param []
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */
@@ -258,7 +249,6 @@ public class UserService extends BaseService<TUser> {
      * @author: 秀仔
      * @Description
      * 模糊分页查询
-     * @param [userSelectVo]
      * @return java.util.List<java.util.HashMap<java.lang.String,java.lang.Object>>
      * @throws
      */

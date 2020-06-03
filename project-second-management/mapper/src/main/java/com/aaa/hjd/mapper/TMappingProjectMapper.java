@@ -1,8 +1,7 @@
-package com.aaa.hjd.mapper.dao;
+package com.aaa.hjd.mapper;
 
-import com.aaa.hjd.mapper.entity.TMappingProject;
-import org.apache.ibatis.annotations.Param;
-import java.util.List;
+import com.aaa.hjd.model.TMappingProject;
+import tk.mybatis.mapper.common.Mapper;
 
 /**
  * 测绘项目信息(TMappingProject)表数据库访问层
@@ -10,56 +9,6 @@ import java.util.List;
  * @author makejava
  * @since 2020-06-03 12:17:31
  */
-public interface TMappingProjectDao {
-
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param id 主键
-     * @return 实例对象
-     */
-    TMappingProject queryById(Object id);
-
-    /**
-     * 查询指定行数据
-     *
-     * @param offset 查询起始位置
-     * @param limit 查询条数
-     * @return 对象列表
-     */
-    List<TMappingProject> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
-
-
-    /**
-     * 通过实体作为筛选条件查询
-     *
-     * @param tMappingProject 实例对象
-     * @return 对象列表
-     */
-    List<TMappingProject> queryAll(TMappingProject tMappingProject);
-
-    /**
-     * 新增数据
-     *
-     * @param tMappingProject 实例对象
-     * @return 影响行数
-     */
-    int insert(TMappingProject tMappingProject);
-
-    /**
-     * 修改数据
-     *
-     * @param tMappingProject 实例对象
-     * @return 影响行数
-     */
-    int update(TMappingProject tMappingProject);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param id 主键
-     * @return 影响行数
-     */
-    int deleteById(Object id);
+public interface TMappingProjectMapper extends Mapper<TMappingProject> {
 
 }

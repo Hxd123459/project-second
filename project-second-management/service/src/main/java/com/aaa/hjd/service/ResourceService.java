@@ -1,5 +1,9 @@
 package com.aaa.hjd.service;
 
+import com.aaa.hjd.base.BaseService;
+import com.aaa.hjd.model.Resource;
+import org.springframework.stereotype.Service;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -8,5 +12,6 @@ package com.aaa.hjd.service;
  * Time: 13:30
  * Description:
  */
-public class ResourceService {
+@Service
+public class ResourceService extends BaseService<Resource> {
 }

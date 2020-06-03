@@ -1,5 +1,7 @@
-package com.aaa.hjd.model.entity;
+package com.aaa.hjd.model;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -13,6 +15,8 @@ public class TDict implements Serializable {
     /**
     * 字典ID
     */
+    @Id
+    @Column(name = "DICT_ID")
     private Long dictId;
     /**
     * 键

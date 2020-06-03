@@ -2,12 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c38d5613-d40a-41bf-90c7-4dc1ee0fc7a8" name="Default Changelist" comment="添加菜单管理功能">
+      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/FtpIpProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/FtpIpProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/TimeProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/status/TimeProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils/FileNameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils/FileNameUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils/IdWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils/IdWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/DictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/MappingProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-consumer-management/system-consumer-6081/src/main/java/com/aaa/hjd/controller/MappingProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/PubService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/PubService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TDictMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TMappingProjectMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TResourceMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/MappingProjectService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/ResourcesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/config/FeignMultipartSupportConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/api/src/main/java/com/aaa/hjd/config/FeignMultipartSupportConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TDictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TDictMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TMappingProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TMappingProjectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TResourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TResourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/java/com/aaa/hjd/mapper/TUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TDictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TDictMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TMappingProjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TMappingProjectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TResourceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/TResourceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/mapper/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/TDict.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/TDict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/TMappingProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/model/TMappingProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/vo/DictVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/vo/DictVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/vo/TMappingProjectPageVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/model/src/main/java/com/aaa/hjd/vo/TMappingProjectPageVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/MappingProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/MappingProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/ResourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/TDictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/TDictService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-management/service/src/main/java/com/aaa/hjd/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/java/com/aaa/hjd/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/java/com/aaa/hjd/controller/DictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/java/com/aaa/hjd/controller/MappingProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-second-provider-management/provider-8081/src/main/java/com/aaa/hjd/controller/MappingProjectController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +120,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mybatis02-sql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project-second-common/src/main/java/com/aaa/hjd/utils" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3954023" />
@@ -109,40 +130,17 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aaa.hjd.utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspaceForIdea\project-second\project-second-common\src\main\java\com\aaa\hjd\utils" />
       <recent name="F:\workspaceForIdea\project-second\project-second-management\mapper\src\main\resources\mapper" />
       <recent name="F:\workspaceForIdea\project-second\project-second-management\model\src\main\java\com\aaa\hjd\vo" />
-      <recent name="F:\workspaceForIdea\project-second\project-second-common\src\main\java\com\aaa\hjd\utils" />
       <recent name="F:\workspaceForIdea\project-second\project-second-provider-management\provider-8081\src\main\resources\sql" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApplicationRun6081">
-    <configuration name="MenuService.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aaa.hjd.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.aaa.hjd.service" />
-      <option name="MAIN_CLASS_NAME" value="com.aaa.hjd.service.MenuService" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.testOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="testOne" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="ApplicationRun6081" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="system-consumer-6081" />
       <extension name="coverage">
@@ -183,19 +181,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MenuService.test" />
-      <item itemvalue="JUnit.test.testOne" />
       <item itemvalue="Spring Boot.ApplicationRun6081" />
       <item itemvalue="Spring Boot.ApplicationRun7081" />
       <item itemvalue="Spring Boot.ApplicationRun8081" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApplicationRun6081" />
         <item itemvalue="Spring Boot.ApplicationRun8081" />
+        <item itemvalue="Spring Boot.ApplicationRun6081" />
         <item itemvalue="Spring Boot.ApplicationRun7081" />
-        <item itemvalue="JUnit.test.testOne" />
-        <item itemvalue="JUnit.MenuService.test" />
       </list>
     </recent_temporary>
   </component>
@@ -274,82 +268,86 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1589859456241" />
-    <state x="109" y="38" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590135405324">
+    <state x="109" y="38" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591190655847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="109" y="38" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1590135405324" />
-    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1590082998039">
+    <state x="109" y="38" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1591190655847" />
+    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1591203166315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1590082998039" />
-    <state x="413" y="139" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589988923380">
+    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591203166315" />
+    <state x="413" y="139" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1591199502946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="139" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1589988923380" />
+    <state x="413" y="139" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1591199502946" />
     <state x="307" y="222" width="752" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589981758436">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="307" y="222" width="752" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1589981758436" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589988904348">
+    <state x="423" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591196353790">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589988904348" />
+    <state x="423" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1591196353790" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591161688705">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591161688705" />
     <state x="75" y="0" key="CommitChangelistDialog2" timestamp="1590164442355">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="75" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590164442355" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1590141569592">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1591116755899">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590141569592" />
-    <state width="1323" height="236" key="GridCell.Tab.0.bottom" timestamp="1590152651927">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591116755899" />
+    <state width="1323" height="314" key="GridCell.Tab.0.bottom" timestamp="1591206058456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.0.center" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591206058456" />
+    <state width="1323" height="314" key="GridCell.Tab.0.center" timestamp="1591206058456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.0.left" timestamp="1590152651926">
+    <state width="1323" height="314" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591206058456" />
+    <state width="1323" height="314" key="GridCell.Tab.0.left" timestamp="1591206058456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590152651926" />
-    <state width="1323" height="236" key="GridCell.Tab.0.right" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591206058456" />
+    <state width="1323" height="314" key="GridCell.Tab.0.right" timestamp="1591206058456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.1.bottom" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591206058456" />
+    <state width="1323" height="314" key="GridCell.Tab.1.bottom" timestamp="1591206058457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.1.center" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591206058457" />
+    <state width="1323" height="314" key="GridCell.Tab.1.center" timestamp="1591206058457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.1.left" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591206058457" />
+    <state width="1323" height="314" key="GridCell.Tab.1.left" timestamp="1591206058456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="236" key="GridCell.Tab.1.right" timestamp="1590152651927">
+    <state width="1323" height="314" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591206058456" />
+    <state width="1323" height="314" key="GridCell.Tab.1.right" timestamp="1591206058457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="236" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590152651927" />
-    <state width="1323" height="356" key="GridCell.Tab.2.bottom" timestamp="1590124175013">
+    <state width="1323" height="314" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591206058457" />
+    <state width="1323" height="348" key="GridCell.Tab.2.bottom" timestamp="1591186695628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="356" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590124175013" />
-    <state width="1323" height="356" key="GridCell.Tab.2.center" timestamp="1590124175013">
+    <state width="1323" height="348" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591186695628" />
+    <state width="1323" height="348" key="GridCell.Tab.2.center" timestamp="1591186695627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="356" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1590124175013" />
-    <state width="1323" height="356" key="GridCell.Tab.2.left" timestamp="1590124175013">
+    <state width="1323" height="348" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1591186695627" />
+    <state width="1323" height="348" key="GridCell.Tab.2.left" timestamp="1591186695627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="356" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1590124175013" />
-    <state width="1323" height="356" key="GridCell.Tab.2.right" timestamp="1590124175013">
+    <state width="1323" height="348" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1591186695627" />
+    <state width="1323" height="348" key="GridCell.Tab.2.right" timestamp="1591186695627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="356" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1590124175013" />
+    <state width="1323" height="348" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1591186695627" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1589868598735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -1,4 +1,9 @@
-package com.aaa.hjd.model.entity;
+package com.aaa.hjd.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 import java.io.Serializable;
@@ -9,10 +14,14 @@ import java.io.Serializable;
  * @author makejava
  * @since 2020-06-03 22:55:55
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 public class TMappingProject implements Serializable {
     private static final long serialVersionUID = -95345754804543480L;
     
-    private Object id;
+    private Long id;
     /**
     * 项目类型
     */
@@ -108,11 +117,11 @@ public class TMappingProject implements Serializable {
     /**
     * 创建时间
     */
-    private Object createTime;
+    private String createTime;
     /**
     * 更改时间
     */
-    private Object modifyTime;
+    private String modifyTime;
     /**
     * 备注
     */
@@ -183,7 +192,7 @@ public class TMappingProject implements Serializable {
     /**
     * 合同上传时间
     */
-    private Date contractTime;
+    private String contractTime;
 
 
 }
