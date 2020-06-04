@@ -117,4 +117,15 @@ public interface TUserMapper extends Mapper<TUser> {
      * @throws
      */
     List<HashMap<String, Object>> getUserSsex();
+
+    /**
+     * @Author xxf
+     * @Description
+     *      账号解锁
+     * @Date 10:15 2020/5/27
+     * @Param [tUser]
+     * @return java.lang.Integer
+     * @throws
+     **/
+    Integer updateUserStatus(TUser tUser);
 }

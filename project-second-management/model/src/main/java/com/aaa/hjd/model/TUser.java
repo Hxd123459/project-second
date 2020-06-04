@@ -2,6 +2,7 @@ package com.aaa.hjd.model;
 
 import com.aaa.hjd.base.BaseModel;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
  * @since 2020-05-16 13:46:07
  */
 @Data
+@Accessors(chain = true)
 public class TUser extends BaseModel implements Serializable {
     private static final long serialVersionUID = 938447659516527171L;
     /**

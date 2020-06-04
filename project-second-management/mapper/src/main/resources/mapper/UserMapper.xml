@@ -92,4 +92,9 @@
 
 
   </select>
+  <update id="updateUserStatus" parameterType="com.aaa.hjd.model.TUser">
+    update t_user set
+    status=#{status} where
+     id=#{id}
+  </update>
 </mapper>

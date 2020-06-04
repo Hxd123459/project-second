@@ -7,15 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
-import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
+
+/**
+ * 测绘单位表(TMappingUnit)实体类
+ *
+ * @author makejava
+ * @since 2020-05-19 14:13:24
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@Accessors(chain =true)
 @Table(name = "`t_mapping_unit`")
-public class TMappingUnit extends BaseModel {
-
+public class TMappingUnit extends BaseModel implements Serializable {
+    private static final long serialVersionUID = 553845369324883601L;
     /**
      * 备注
      */
@@ -269,15 +276,15 @@ public class TMappingUnit extends BaseModel {
     private Integer auditStatus;
 
     /**
-     * 
-单位代码
+     *
+     单位代码
      */
     @Column(name = "`unit_code`")
     private String unitCode;
 
     /**
      * 1白名单2
-黑名单3待定
+     黑名单3待定
      */
     @Column(name = "`unit_status`")
     private Integer unitStatus;
@@ -290,7 +297,7 @@ public class TMappingUnit extends BaseModel {
 
     /**
      * 单位分值 默认为100分 小于60分
-进黑名单,大于等于100分进白名单
+     进黑名单,大于等于100分进白名单
      */
     @Column(name = "`score`")
     private Integer score;

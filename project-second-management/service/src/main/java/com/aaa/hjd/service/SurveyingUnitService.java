@@ -4,13 +4,18 @@ import com.aaa.hjd.base.BaseService;
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.mapper.SurveyingUnitMapper;
 import com.aaa.hjd.model.TMappingUnit;
+import com.aaa.hjd.utils.CheckObjectIsNullUtils;
 import com.aaa.hjd.utils.DateTimeUtils;
 import com.aaa.hjd.utils.JSONUtil;
+import com.aaa.hjd.utils.TimeUtils;
 import com.aaa.hjd.utils.ObjectUtil;
 import com.aaa.hjd.vo.TokenVo;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -130,6 +135,79 @@ public class SurveyingUnitService extends BaseService<TMappingUnit> {
                 //返回受影响行
                 return result;
             }
+        }
+        return null;
+    }
+
+
+    /**
+     * @Author xxf
+     * @Description
+     *      查询所有单位信息+分页+搜索
+     * @Date 11:39 2020/5/27
+     * @Param [map]
+     * @return com.github.pagehelper.PageInfo<com.aaa.hjd.model.TMappingUnit>
+     * @throws
+     **/
+    public PageInfo<TMappingUnit> selectUnitList(HashMap map){
+        //获取分页信息，进行分页设置
+        Integer pageNum = (Integer) map.get("pageNum");
+        Integer pageSize = (Integer) map.get("pageSize");
+        PageHelper.startPage(pageNum,pageSize);
+        //获取搜索信息
+        String unitName = (String) map.get("unitName");
+        //进行查询
+        List<TMappingUnit> tMappingUnits = surveyingUnitMapper.selectUnitList(unitName);
+        if (tMappingUnits.size() > 0) {
+            return new PageInfo(tMappingUnits);
+        }
+        return null;
+    }
+
+    /**
+     * @Author xxf
+     * @Description
+     *      根据主键询一条单位数据
+     * @Date 11:00 2020/5/29
+     * @Param [tMappingUnit]
+     * @return com.aaa.hjd.model.TMappingUnit
+     * @throws
+     **/
+    public TMappingUnit selectOne(TMappingUnit tMappingUnit){
+        try {
+            TMappingUnit tMappingUnit1 = super.queryOne(tMappingUnit);
+            boolean b = CheckObjectIsNullUtils.objCheckIsNull(tMappingUnit1);
+            if (!b){
+                //非空
+                return tMappingUnit1;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * @Author xxf
+     * @Description
+     *      查询修改待审核的单位信息+搜索+分页
+     * @Date 10:51 2020/5/31
+     * @Param [map]
+     * @return com.github.pagehelper.PageInfo<com.aaa.hjd.model.TMappingUnit>
+     * @throws
+     **/
+    public PageInfo<TMappingUnit> selectAuditForUpdate(HashMap map) {
+        //获取分页信息，进行分页设置
+        Integer pageNum = (Integer) map.get("pageNum");
+        Integer pageSize = (Integer) map.get("pageSize");
+        PageHelper.startPage(pageNum,pageSize);
+        //获取搜索信息
+        String unitName =  (String) map.get("unitName");
+        //查询
+        List<TMappingUnit> tMappingUnits = surveyingUnitMapper.selectAuditForUpdate(unitName);
+        //判断查询结果是否为空
+        if (tMappingUnits.size() > 0) {
+            return new PageInfo(tMappingUnits);
         }
         return null;
     }
