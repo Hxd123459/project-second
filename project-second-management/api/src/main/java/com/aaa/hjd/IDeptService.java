@@ -3,7 +3,6 @@ package com.aaa.hjd;
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.model.Audit;
 import com.aaa.hjd.model.Dept;
-import com.aaa.hjd.model.Score;
 import com.aaa.hjd.model.TMappingUnit;
 import com.aaa.hjd.vo.DeptVo;
 import org.springframework.cloud.openfeign.FeignClient;

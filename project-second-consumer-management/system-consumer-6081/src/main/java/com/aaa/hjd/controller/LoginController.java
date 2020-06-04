@@ -1,6 +1,7 @@
 package com.aaa.hjd.controller;
 
 import com.aaa.hjd.PubService;
+import com.aaa.hjd.annotation.LoginLogAnnotation;
 import com.aaa.hjd.base.BaseController;
 import com.aaa.hjd.base.ResultData;
 import com.aaa.hjd.model.TUser;
@@ -26,6 +27,7 @@ public class LoginController extends BaseController {
     private PubService pubService;
 
     @PostMapping("/doLogin")
+    @LoginLogAnnotation(operationType = "用户登录",operationName = "登录操作")
     @ApiOperation(value = "登陆功能",notes = "用户执行登陆功能")
     public ResultData doLogin(@RequestBody TUser tUser){
         TokenVo tokenVo = pubService.doLogin(tUser);

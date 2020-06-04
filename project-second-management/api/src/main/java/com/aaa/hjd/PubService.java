@@ -639,4 +639,16 @@ public interface PubService {
     @PostMapping("/deleteBatchByIds")
     ResultData deleteBatchByIds(@RequestBody List<Object> ids);
 
+    /**
+     * @date:  2020/5/27
+     * @author: 秀仔
+     * @Description
+     * 登录日志
+     * @param [map]
+     * @return com.aaa.zwc.base.ResultDate
+     * @throws
+     */
+    @PostMapping("/addLoginLog")
+    void addLoginLog(@RequestBody HashMap<String, Object> map);
+
 }
