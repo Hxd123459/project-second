@@ -76,10 +76,10 @@ public class ScoreService extends BaseService<Score> {
             Long unitId = score.getUnitId();
             //是否加分
             Integer scorePlus = score.getScorePlus();
-            if (scorePlus == null && scorePlus <= 0){
+            if (scorePlus == null || scorePlus <= 0){
                 //是否减分
                 Integer scoreSubtract = score.getScoreSubtract();
-                if (scoreSubtract == null && scoreSubtract <= 0){
+                if (scoreSubtract == null || scoreSubtract <= 0){
                     if (add > 0) {
                         return true;
                     }
